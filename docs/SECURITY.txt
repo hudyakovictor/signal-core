@@ -1,0 +1,4 @@
+Contact: https://github.com/hudyakovictor/signal-core/issues/new
+Preferred-Languages: en, ru
+Policy: https://github.com/hudyakovictor/signal-core/blob/main/docs/SECURITY.md
+Hiring: N/A

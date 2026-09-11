@@ -1,0 +1,15 @@
+apps/game-client:
+  - changed-files:
+      - any-glob-to-any-file: apps/game-client/**/*
+
+apps/admin-crm:
+  - changed-files:
+      - any-glob-to-any-file: apps/admin-crm/**/*
+
+services:
+  - changed-files:
+      - any-glob-to-any-file: services/**/*
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file: docs/**/*

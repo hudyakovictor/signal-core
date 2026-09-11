@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: Signal Arena API
+  version: 0.1.0
+  description: Zero-Client-Trust game server + Admin Core (VPN-only)
+servers:
+  - url: https://api.signal-arena.example
+    description: Production
+  - url: http://localhost:8080
+    description: Local game-server
+
+paths:
+  /health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+
+  /battle/parry:
+    post:
+      summary: Submit parry timing (client -> server)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sessionId:
+                  type: string
+                bossId:
+                  type: string
+                timingMs:
+                  type: integer
+              required: [sessionId, bossId, timingMs]
+      responses:
+        '200':
+          description: Parry result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  damageMitigated:
+                    type: boolean
+                  fuelGained:
+                    type: integer
+        '401':
+          description: Invalid Telegram initData
+
+components:
+  securitySchemes:
+    telegramInitData:
+      type: apiKey
+      in: header
+      name: X-Telegram-Init-Data
