@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+*.log
+.env
+.env.local
+.git
+.github
+.vscode
+docs
+*.md
+!services/game-server/Dockerfile
+!services/admin-core/Dockerfile

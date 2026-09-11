@@ -13,6 +13,14 @@
     "dev:game": "npm run dev -w @signal-core/game-client",
     "build:game": "npm run build -w @signal-core/game-client",
     "typecheck": "npm run typecheck -w @signal-core/game-client",
-    "test": "npm run test -w @signal-core/game-client"
+    "test": "npm run test -w @signal-core/game-client",
+    "dev:crm": "npm run dev -w @signal-core/admin-crm",
+    "build:crm": "npm run build -w @signal-core/admin-crm",
+    "dev:server": "npm run dev -w @signal-core/game-server",
+    "dev:admin": "npm run dev -w @signal-core/admin-core",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.0"
   }
 }
