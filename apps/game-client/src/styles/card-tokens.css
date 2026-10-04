@@ -1,0 +1,82 @@
+/* ---------------------------------------------------------------------------
+   Signal Arena — Card Design Spec v2.0 · CSS-токены (§1, §3, §7)
+   Источник истины по дизайну: docs/CARD_DESIGN_V2.md
+   TS-зеркало констант: src/data/cards-v2.ts (CARD_TYPE_COLORS и др.)
+--------------------------------------------------------------------------- */
+
+:root {
+  /* §1 Цветовая система: 4 типа → 4 цвета */
+  --color-read: #38BDF8;     /* box-shadow: 0 0 12px #38BDF8aa */
+  --color-decide: #4ADE80;   /* box-shadow: 0 0 12px #4ADE80aa */
+  --color-protocol: #A78BFA; /* box-shadow: 0 0 12px #A78BFAaa */
+  --color-protect: #FBBF24;  /* box-shadow: 0 0 12px #FBBF24aa */
+
+  --glow-read: 0 0 12px #38BDF8aa;
+  --glow-decide: 0 0 12px #4ADE80aa;
+  --glow-protocol: 0 0 12px #A78BFAaa;
+  --glow-protect: 0 0 12px #FBBF24aa;
+
+  /* §3 Фон карты — всегда тёмный «космос» */
+  --color-card-bg: #0D1117;
+  --color-card-fg: #FFFFFF; /* номер, название, монохромная иконка */
+
+  /* §7 Entity-карты (враги) */
+  --color-entity: #EF4444;
+  --glow-entity: 0 0 12px #EF4444aa;
+
+  --card-icon-size: 48px;
+}
+
+/* §3 SVG-шаблон карты: цветная рамка + glow по типу, тёмный фон. */
+.skill-card,
+.entity-card {
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--card-frame-color, var(--color-read));
+  border-radius: 12px;
+  box-shadow: var(--card-glow, var(--glow-read));
+  color: var(--color-card-fg);
+}
+
+/* Тип карты задаётся через data-атрибут (без хардкода цвета в компоненте). */
+.skill-card[data-card-type='read'] {
+  --card-frame-color: var(--color-read);
+  --card-glow: var(--glow-read);
+}
+
+.skill-card[data-card-type='decide'] {
+  --card-frame-color: var(--color-decide);
+  --card-glow: var(--glow-decide);
+}
+
+.skill-card[data-card-type='protocol'] {
+  --card-frame-color: var(--color-protocol);
+  --card-glow: var(--glow-protocol);
+}
+
+.skill-card[data-card-type='protect'] {
+  --card-frame-color: var(--color-protect);
+  --card-glow: var(--glow-protect);
+}
+
+/* §7 Враги: единая красная рамка, арт 42 JPG сохраняется без изменений. */
+.entity-card {
+  --card-frame-color: var(--color-entity);
+  --card-glow: var(--glow-entity);
+}
+
+/* Иконка всегда монохромная белая — DNA проекта (§1, §3). */
+.skill-card .card-icon {
+  width: var(--card-icon-size);
+  height: var(--card-icon-size);
+  color: var(--color-card-fg);
+  fill: none;
+  stroke: currentColor;
+}
+
+/* Бейдж типа в правом нижнем углу (§3). */
+.skill-card .card-type-badge {
+  background-color: var(--card-frame-color);
+  color: var(--color-card-bg);
+  font-weight: 700;
+  text-transform: uppercase;
+}

@@ -1,6 +1,7 @@
 // Signal Arena entry — stub until Phase 0 patch merge.
 // Imports Phaser + TWA SDK to validate build chain.
 
+import './styles/card-tokens.css';
 import { initTWA } from './telegram';
 
 const tg = initTWA();
