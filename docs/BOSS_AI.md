@@ -1,5 +1,17 @@
 # Boss AI — state machine
 
+## Ростр врагов (CARD DESIGN SPEC v2.0, §7)
+
+Библиотека entity-карт: **42 JPG** из `old-version/assets/entities/` — арт без изменений,
+рамка единая красная `#EF4444`, ранг I/II/III в правом верхнем углу. Приоритетные бои
+по unlock_map: **Dopamine Imp** (A7, первый бой), **Volatility Chimera** (C27),
+**Indicator Cult** (C29, босс главы), **Fake Breakout Phantom** (D39, босс главы),
+**FOMO Wraith** (D36), **Liquidity Hydra** (E49, босс главы), **Drawdown Leviathan** (апекс).
+
+> State-машины ниже описывают 4 архетипа vertical slice (Phase 1). Машины для расширенного
+> ростра (Dopamine Imp, Hydra, Chimera и др.) вводятся по мере глав — каждая переиспользует
+> transition rules из этого файла. Датасет приоритетных entity: `apps/game-client/src/data/cards-v2.ts`.
+
 ## FOMO Wraith
 - **State 1 (Idle):** патрулирование арены, спавн иллюзорных ракет (каждые 2 сек).
 - **State 2 (Charge):** телеграф атаки (1.6 сек окно), игрок должен удержать парирование.

@@ -27,6 +27,8 @@ signal-core/
 ## Документация
 
 - [MASTER_ARCHITECTURE_SPEC.md](./MASTER_ARCHITECTURE_SPEC.md) — мастер-ТЗ (AAA Web3, 99 уровень)
+- [docs/CARD_DESIGN_V2.md](./docs/CARD_DESIGN_V2.md) — карточная система v2.0: 40 skill-карт, 4 типа-цвета, Skill Tree v2, entity-карты
+- [docs/GAME_DESIGN.md](./docs/GAME_DESIGN.md) — числа первого баланса (ресурсы, боссы, Action Deck)
 - [docs/PATCH_MERGE_PLAN.md](./docs/PATCH_MERGE_PLAN.md) — план слияния патчей из архива arenarel
 
 ## Roadmap

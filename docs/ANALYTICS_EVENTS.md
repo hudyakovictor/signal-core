@@ -9,8 +9,12 @@
 - `battle.start` — boss_id, player_level
 - `battle.hit_taken` — damage, source_signal
 - `battle.parried` — timing_ms (для античита: флаг если < 120)
-- `battle.card_played` — card_id, fuel_left
+- `battle.card_played` — card_id, card_type (`read|decide|protocol|protect` по CARD_DESIGN_V2), fuel_left
 - `battle.boss_defeated` / `battle.player_down` — boss_id, duration_sec
+
+## Skill Tree v2 (CARD_DESIGN_V2 §5)
+- `skill.unlocked` — card_id, card_type, branch, parent_card_id
+- `skill.branch_gated` — branch (`protect`), gate (`stage_f_plus`) — заход на заблокированную ветку
 
 ## Монетизация
 - `monetization.pass_view`, `monetization.purchase_start`, `monetization.purchase_complete` — sku, currency

@@ -11,7 +11,7 @@ Signal Arena — это не торговый терминал и не симу�
 - Управление одной рукой (One-Thumb Ergonomics). Зона активного взаимодействия (Hot Zone) находится в нижних 40% экрана.
 - Верхняя треть (30%): Boss Arena & Status Visualizer.
 - Средняя треть (30%): Signal Decryption Grid.
-- Нижняя треть (40%): Action Deck (карты психозащиты, RexUI диалоги Скрепки).
+- Нижняя треть (40%): Action Deck (карты психозащиты в цветных рамках CARD DESIGN v2.0, бейджи типов READ/DECIDE/PROTOCOL/PROTECT, RexUI диалоги Скрепки).
 
 ### 2.2. Разгруженный минималистичный интерфейс (AAA Clean Cyberpunk)
 - Никаких терминальных стаканов заявок и перегруженных таблиц.
@@ -52,3 +52,13 @@ Signal Arena — это не торговый терминал и не симу�
 
 ## 7. GAMEFI 2.0 ПЕРСПЕКТИВА
 Telegram Mini Apps — первый канал распространения (минимальный CAC). Экономика сначала off-chain: косметика, Battle Pass, турнирные билеты, страховочные контракты. Token-слой добавляется только после подтверждения retention-метрик (D1>40%, D7>15%).
+
+## 8. КАРТОЧНАЯ СИСТЕМА V2.0 (CARD DESIGN SPEC)
+
+Актуальный дизайн карт — **docs/CARD_DESIGN_V2.md** (замещает «Монохромный атлас»):
+
+- **40 skill-карт в 4 типах-цветах:** READ `#38BDF8` (14), DECIDE `#4ADE80` (9), PROTOCOL `#A78BFA` (10), PROTECT `#FBBF24` (7). Цвет рамки = функциональная роль карты в решении трейдера; игрок считывает тип за ~0.3 сек.
+- **Шаблон карты:** тёмный фон `#0D1117`, цветная рамка + glow (`0 0 12px <hex>aa`), монохромная белая иконка 48×48px (Lucide/Tabler, DNA проекта), бейдж типа в правом нижнем углу.
+- **Skill Tree v2:** 4 ветки-цвета (READ — слева, DECIDE — центр-право, PROTOCOL — верхняя арка, PROTECT — нижняя линия обороны). PROTECT-ветка открывается только после Stage F+.
+- **Entity-карты врагов (42 JPG):** арт без изменений, единая красная рамка `#EF4444`, ранг I/II/III. Приоритетные бои: Dopamine Imp (A7, первый бой), Volatility Chimera (C27), Indicator Cult (C29), FOMO Wraith (D36), Fake Breakout Phantom (D39), Liquidity Hydra (E49), Drawdown Leviathan (апекс).
+- **Данные и токены в коде:** `apps/game-client/src/data/cards-v2.ts`, `apps/game-client/src/styles/card-tokens.css`; контракты — `packages/shared-types` (CardType, ISkillCard, IEntityCard).
